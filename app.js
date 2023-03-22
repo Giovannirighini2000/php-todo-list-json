@@ -5,10 +5,33 @@ createApp({
         return {
             title: 'Todo list',
             todosList: [],
+            newTodo: '',
 
         }
     },
     methods: {
+        saveTask() {
+            console.log('save task', this.newTodo)
+            $data = {
+                todo: this.newTodo,
+            }
+
+            axios
+                .post('./server.php', $data, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                })
+                .then((res) => {
+                    this.todosList = res.data
+
+                    this.newTodo = ''
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        },
+
         fetchTodoList() {
             axios
                 .get('./server.php')

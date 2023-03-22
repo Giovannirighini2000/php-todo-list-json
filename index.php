@@ -8,6 +8,7 @@
   <title>Todo-list</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
@@ -16,11 +17,14 @@
         <h1 class="title-todo">{{ title }}</h1>
       </div>
       <div>
+      
+        
         <ul>
-            <li v-for="todo in todosList" :key="todo" class="todo-list">{{todo}}</li>
+            <li v-for="todo in todosList" :key="todo" class="todo-list">{{todo.text}}</li>
         </ul>
       </div>
-      
+      <input  @keyup.enter="saveTask"  class="new-task" v-model='newTodo'
+      type="text" name="todo" placeholder="New task insert here" >
     </section>
   </div>
   <script src="./app.js"></script>

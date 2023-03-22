@@ -1,8 +1,22 @@
 [
-    "html",
-    "css",
-    "responsive layout",
-    "php",
-    "laravel",
-    "vue"
+    {
+        "text": "html",
+        "status": true
+    },
+    {
+        "text": "css",
+        "status": true
+    },
+    {
+        "text": "java",
+        "status": true
+    },
+    {
+        "text": "laravel",
+        "status": true
+    },
+    {
+        "text": "vue",
+        "status": true
+    }
 ]
