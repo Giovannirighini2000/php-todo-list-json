@@ -4,7 +4,7 @@ createApp({
     data() {
         return {
             title: 'Todo list',
-            todos_list: [],
+            todosList: [],
 
         }
     },
@@ -14,12 +14,14 @@ createApp({
                 .get('./server.php')
                 .then((res) => {
                     console.log(res.data)
+                    this.todosList = res.data
                 })
                 .catch((err) => {
-                    console.log(res.data)
+                    console.log(err)
+                    this.todosList = []
                 })
 
-        }
+        },
     },
     mounted() {
         this.fetchTodoList()

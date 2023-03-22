@@ -12,8 +12,13 @@
 <body>
   <div id="app">
     <section>
-      <div class="">
-        <h1 class="">{{ title }}</h1>
+      <div class="container-todo">
+        <h1 class="title-todo">{{ title }}</h1>
+      </div>
+      <div>
+        <ul>
+            <li v-for="todo in todosList" :key="todo" class="todo-list">{{todo}}</li>
+        </ul>
       </div>
       
     </section>
